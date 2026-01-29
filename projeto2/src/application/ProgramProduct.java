@@ -7,31 +7,32 @@ public class ProgramProduct {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Produto a = new Produto();
+
 
 		System.out.println("Programa de produto\n");
 
 		System.out.print("Digite o nome do produto: ");
-		a.name = sc.nextLine();
+		String name = sc.nextLine();
 
 		System.out.print("Digite o preço do produto: ");
-		a.price = sc.nextDouble();
-
-		System.out.print("Digite a quantidade em estoque: ");
-		a.quantity = sc.nextDouble();
+		double price = sc.nextDouble();
+		
+		Produto a = new Produto(name, price);
 
 		System.out.println("\nDados do produto:");
 		System.out.println(a);
 
 		System.out.print("\nDigite a quantidade para adicionar ao estoque: ");
-		a.n = sc.nextDouble();
+		double n2 = sc.nextDouble();
+		a.setN(n2);
 		a.addProduct();
 
 		System.out.println("\nDados atualizados:");
 		System.out.println(a);
 
 		System.out.print("\nDigite a quantidade para remover do estoque: ");
-		a.n = sc.nextDouble();
+		n2 = sc.nextDouble();
+		a.setN(n2); // encapsulamento, nao estou deixando o usuario inserir o valor no "n" diretamente
 		a.lessProduct();
 
 		System.out.println("\nDados finais:");
